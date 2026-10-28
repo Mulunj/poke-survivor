@@ -1,36 +1,44 @@
-# PokeSurvivor Prototype
+# PokeSurvivor
 
-A browser-based 2D survival fan game prototype inspired by Pokémon and vampire-survivor style combat.
+A browser-based 2D survival fan game prototype inspired by Pokémon and Vampire Survivors-style progression.
 
-## Features
+## Updated features
 
-- WASD movement
-- Auto-targeting projectile combat
-- Enemy waves and survival loop
-- XP collection and leveling
-- Type effectiveness for fire, water, grass, and electric
-- Move-slot management with buffing move
-- Permanent upgrade system
-- Gacha-style Pokémon unlocks
+- Start menu and pause overlay
+- Sprite-style creature art and animation
+- Sound effects generated via Web Audio
+- Multiple starter species with different move sets
+- Evolution-based form changes
+- Better enemy pathing and evasive AI
+- Upgrade system and gacha unlock flow
+- Multiplayer-ready architecture stub for WebSocket-based sync
 
 ## Run locally
-
-Open `index.html` directly in a browser, or serve the folder with a simple local HTTP server:
 
 ```bash
 cd poke-survivor
 python3 -m http.server 8000
 ```
 
-Then visit `http://localhost:8000`.
+Then open `http://localhost:8000` in your browser.
 
 ## Controls
 
 - Move: `W`, `A`, `S`, `D`
-- Switch move: `1`, `2`, `3`, `4`
+- Switch moves: `1`, `2`, `3`, `4`
 - Pause: `P`
 - Restart after death: `R`
 
-## Notes
+## Design notes
 
-This is a lightweight prototype for the core gameplay loop. It is intentionally built with plain HTML, CSS, and JavaScript so it runs without a build step.
+This prototype intentionally uses original canvas art and generated sound effects instead of copyrighted sprite assets. The networking layer is designed to be ready for a real multiplayer backend, but the HTML/JavaScript version here focuses on a complete single-player loop.
+
+## Next steps
+
+If you want to continue, the next realistic upgrade is to add:
+
+1. real sprite sheets and animation frames
+2. a backend server for online multiplayer
+3. an inventory, run summary screen, and map selection
+4. a richer move system with status effects and skill trees
+

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PokeSurvivor Prototype</title>
+    <title>PokeSurvivor</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -16,6 +16,7 @@
           <div><span>HP</span><strong id="healthDisplay">100 / 100</strong></div>
           <div><span>XP</span><strong id="xpDisplay">0 / 100</strong></div>
           <div><span>Coins</span><strong id="coinDisplay">0</strong></div>
+          <div><span>Wave</span><strong id="waveDisplay">1</strong></div>
         </div>
 
         <div class="move-list">
@@ -47,6 +48,7 @@
           <p>Current move: <strong id="currentMoveLabel">Spark</strong></p>
           <p>Damage buff: <strong id="attackBoostLabel">x1.00</strong></p>
           <p>Buff timer: <strong id="buffTimerLabel">0.0s</strong></p>
+          <p>Form: <strong id="evolutionLabel">Base</strong></p>
         </div>
 
         <div class="upgrade-panel">
@@ -60,12 +62,37 @@
       <main class="arena-panel">
         <div class="arena-header">
           <div class="title-wrap">
-            <span class="badge">Prototype</span>
+            <span class="badge">Prototype+</span>
             <h2>Survival Arena</h2>
           </div>
-          <button id="gachaBtn" class="gacha-btn">Gacha: Unlock Pokémon</button>
+          <div class="header-actions">
+            <button id="pauseBtn" class="small-btn">Pause</button>
+            <button id="gachaBtn" class="gacha-btn">Gacha</button>
+          </div>
         </div>
-        <canvas id="gameCanvas" width="960" height="600"></canvas>
+
+        <div class="canvas-wrap">
+          <canvas id="gameCanvas" width="960" height="600"></canvas>
+
+          <div id="gameOverlay" class="overlay visible">
+            <div class="menu-panel">
+              <p class="eyebrow">Select your companion</p>
+              <h3>Choose a starter</h3>
+              <div id="speciesSelect" class="species-select"></div>
+              <button id="startBtn" class="primary-btn">Start Run</button>
+            </div>
+          </div>
+
+          <div id="pauseOverlay" class="overlay hidden">
+            <div class="menu-panel compact">
+              <h3>Paused</h3>
+              <div class="menu-actions">
+                <button id="resumeBtn" class="primary-btn">Resume</button>
+                <button id="menuBtn" class="secondary-btn">Main Menu</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
 
       <aside class="panel right-panel">
@@ -93,6 +120,7 @@
             <li>Move: WASD</li>
             <li>Swap moves: 1-4</li>
             <li>Pause: P</li>
+            <li>Restart: R</li>
           </ul>
         </div>
       </aside>

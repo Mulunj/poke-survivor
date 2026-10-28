@@ -28,6 +28,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+button {
+  font: inherit;
+}
+
 .game-shell {
   display: grid;
   grid-template-columns: 280px minmax(640px, 960px) 240px;
@@ -163,7 +167,11 @@ h2 {
 }
 
 .upgrade-btn,
-.gacha-btn {
+.gacha-btn,
+.small-btn,
+.primary-btn,
+.secondary-btn,
+.species-card {
   appearance: none;
   border: 1px solid rgba(255,255,255,0.09);
   border-radius: 10px;
@@ -176,9 +184,26 @@ h2 {
 }
 
 .upgrade-btn:hover,
-.gacha-btn:hover {
+.gacha-btn:hover,
+.small-btn:hover,
+.primary-btn:hover,
+.secondary-btn:hover,
+.species-card:hover {
   transform: translateY(-1px);
   border-color: rgba(125,211,252,0.8);
+}
+
+.primary-btn {
+  background: linear-gradient(180deg, rgba(16,185,129,0.35), rgba(15,118,110,0.9));
+}
+
+.secondary-btn {
+  background: linear-gradient(180deg, rgba(148,163,184,0.2), rgba(51,65,85,0.9));
+}
+
+.small-btn {
+  padding: 8px 12px;
+  font-size: 0.85rem;
 }
 
 .arena-panel {
@@ -204,6 +229,12 @@ h2 {
   gap: 12px;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .badge {
   padding: 5px 8px;
   border-radius: 999px;
@@ -215,11 +246,95 @@ h2 {
   font-weight: 700;
 }
 
+.canvas-wrap {
+  position: relative;
+}
+
 #gameCanvas {
   display: block;
   width: 100%;
   height: auto;
   background: linear-gradient(180deg, rgba(16, 25, 47, 0.9), rgba(11, 18, 35, 0.95));
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2, 6, 23, 0.54);
+  backdrop-filter: blur(3px);
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay.visible {
+  display: flex;
+}
+
+.menu-panel {
+  width: min(80%, 620px);
+  padding: 22px 20px;
+  background: rgba(15, 23, 42, 0.93);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 16px 36px rgba(0,0,0,0.28);
+}
+
+.menu-panel.compact {
+  width: min(60%, 380px);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-size: 0.72rem;
+  margin-bottom: 8px;
+}
+
+.menu-panel h3 {
+  margin: 0 0 16px;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.species-select {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.species-card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 4px;
+  padding: 12px 14px;
+  background: rgba(15, 118, 110, 0.2);
+}
+
+.species-card.active {
+  border-color: rgba(125, 211, 252, 0.8);
+  background: rgba(125, 211, 252, 0.12);
+}
+
+.species-card strong {
+  font-size: 1rem;
+}
+
+.species-card span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.menu-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 
 ul {
