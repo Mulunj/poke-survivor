@@ -171,7 +171,8 @@ h2 {
 .small-btn,
 .primary-btn,
 .secondary-btn,
-.species-card {
+.species-card,
+.skill-card {
   appearance: none;
   border: 1px solid rgba(255,255,255,0.09);
   border-radius: 10px;
@@ -188,7 +189,8 @@ h2 {
 .small-btn:hover,
 .primary-btn:hover,
 .secondary-btn:hover,
-.species-card:hover {
+.species-card:hover,
+.skill-card:hover {
   transform: translateY(-1px);
   border-color: rgba(125,211,252,0.8);
 }
@@ -288,6 +290,10 @@ h2 {
   width: min(60%, 380px);
 }
 
+.summary-panel {
+  width: min(82%, 700px);
+}
+
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -301,14 +307,16 @@ h2 {
   font-size: clamp(1.6rem, 3vw, 2.4rem);
 }
 
-.species-select {
+.species-select,
+.skill-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin-bottom: 18px;
 }
 
-.species-card {
+.species-card,
+.skill-card {
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -317,18 +325,41 @@ h2 {
   background: rgba(15, 118, 110, 0.2);
 }
 
-.species-card.active {
+.species-card.active,
+.skill-card.active {
   border-color: rgba(125, 211, 252, 0.8);
   background: rgba(125, 211, 252, 0.12);
 }
 
-.species-card strong {
+.species-card strong,
+.skill-card strong {
   font-size: 1rem;
 }
 
-.species-card span {
+.species-card span,
+.skill-card span {
   color: var(--muted);
   font-size: 0.82rem;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 18px;
+  margin-bottom: 18px;
+}
+
+.summary-card {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.summary-card strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-top: 4px;
 }
 
 .menu-actions {

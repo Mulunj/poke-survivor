@@ -49,6 +49,7 @@
           <p>Damage buff: <strong id="attackBoostLabel">x1.00</strong></p>
           <p>Buff timer: <strong id="buffTimerLabel">0.0s</strong></p>
           <p>Form: <strong id="evolutionLabel">Base</strong></p>
+          <p>Map: <strong id="mapLabel">Sunlit Meadow</strong></p>
         </div>
 
         <div class="upgrade-panel">
@@ -89,6 +90,26 @@
               <div class="menu-actions">
                 <button id="resumeBtn" class="primary-btn">Resume</button>
                 <button id="menuBtn" class="secondary-btn">Main Menu</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="skillOverlay" class="overlay hidden">
+            <div class="menu-panel">
+              <p class="eyebrow">Choose an upgrade</p>
+              <h3>Skill Tree</h3>
+              <div id="skillChoiceGrid" class="species-select"></div>
+            </div>
+          </div>
+
+          <div id="summaryOverlay" class="overlay hidden">
+            <div class="menu-panel summary-panel">
+              <p class="eyebrow">Run complete</p>
+              <h3>Survival Summary</h3>
+              <div id="summaryStats" class="summary-grid"></div>
+              <div class="menu-actions">
+                <button id="playAgainBtn" class="primary-btn">Play Again</button>
+                <button id="summaryMenuBtn" class="secondary-btn">Main Menu</button>
               </div>
             </div>
           </div>
